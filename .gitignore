@@ -1,0 +1,9 @@
+/gemini-web2api
+/gemini-api
+/.env
+/.env.local
+/cookie.txt
+.pi/
+local/
+*.test
+out.txt

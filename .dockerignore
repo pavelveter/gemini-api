@@ -1,0 +1,14 @@
+.git
+gemini-web2api
+gemini-api
+.env
+cookie.txt
+out.txt
+*.test
+README.md
+Dockerfile
+agent-init.sh
+deploy.sh
+docker-compose.local.yml
+.dockerignore
+.DS_Store

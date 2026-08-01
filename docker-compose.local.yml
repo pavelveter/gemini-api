@@ -1,0 +1,20 @@
+services:
+  gemini-web2api:
+    build: .
+    container_name: gemini-web2api
+    ports:
+      - "8081:8081"
+    # .env is the single source of truth (optional; real env vars always win).
+    # The `required: false` form needs Docker Compose v2.24+.
+    env_file:
+      - path: .env
+        required: false
+    # ── security hardening (image is scratch + non-root) ──
+    read_only: true            # root filesystem is read-only
+    tmpfs:
+      - /tmp                   # writable scratch space for edge cases
+    cap_drop:
+      - ALL                    # no capabilities needed (ports > 1024, outbound HTTPS)
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
